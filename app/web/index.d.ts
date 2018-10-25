@@ -1,0 +1,1 @@
+declare var EASY_ENV_IS_NODE: boolean;
