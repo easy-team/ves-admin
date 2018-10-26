@@ -1,6 +1,6 @@
 # ves-amdin
 
-Ves Framework Example
+Vue + TypeScript Server Side Render Example for Ves Node Framework
 
 ## QuickStart
 
