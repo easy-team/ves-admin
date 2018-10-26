@@ -6,7 +6,7 @@
 <style>
 
 </style>
-<script type="ts">
+<script type="text/babel">
   export default {
   }
 </script>

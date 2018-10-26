@@ -47,16 +47,7 @@
   </el-row>
 </template>
 
-<script>
-export default {
-  components: {},
-  methods: {
-    handleSetLineChartData(type) {
-      this.$emit("handleSetLineChartData", type);
-    }
-  }
-};
-</script>
+<script lang="ts" src="./panel.ts"></script>
 
 <style scoped>
 .panel-group {

@@ -8,11 +8,11 @@ export default class Collection {
     this.name = name;
   }
 
-  public get() {
+  public get(): any {
     return this.db.get(this.name);
   }
 
-  public query(json) {
+  public query(json: any) {
     return this.db.query(this.name, json);
   }
 

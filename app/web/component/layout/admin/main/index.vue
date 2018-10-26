@@ -29,13 +29,4 @@
   min-height: calc(100vh - 100px);
 }
 </style>
-<script type="ts">
-  import LayoutHeader from './header/header';
-  import LayoutContent from './content/content';
-  export default {
-    components: {
-      LayoutHeader,
-      LayoutContent
-    }
-  };
-</script>
+<script lang ="ts" src="./index.ts"></script>

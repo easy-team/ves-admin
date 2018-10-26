@@ -11,8 +11,4 @@
 <style>
   @import "./footer.css";
 </style>
-<script type="ts">
-  export default{
-    
-  };
-</script>
+<script lang="ts"></script>

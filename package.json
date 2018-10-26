@@ -29,11 +29,16 @@
     "showdown": "^1.8.6",
     "simplemde": "^1.11.2",
     "ves": "^0.1.0",
-    "vue-material-input": "^1.2.0"
+    "vue-material-input": "^1.2.0",
+    "vue-property-decorator": "^7.2.0",
+    "vuex-class": "^0.3.1"
   },
   "devDependencies": {
-    "ves-cli": "^0.1.0",
-    "cz-conventional-changelog": "^2.1.0"
+    "@types/lodash": "^4.14.117",
+    "@types/lowdb": "^1.0.6",
+    "@types/shortid": "^0.0.29",
+    "cz-conventional-changelog": "^2.1.0",
+    "ves-cli": "^0.1.0"
   },
   "egg": {
     "framework": "ves",

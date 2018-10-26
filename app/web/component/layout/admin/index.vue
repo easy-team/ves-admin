@@ -17,22 +17,4 @@
 </template>
 <style>
 </style>
-<script type="text/babel">
-  import Vue from 'vue';
-  import ElementUI from 'element-ui';
-  import 'element-ui/lib/theme-chalk/index.css';
-  import './index.css';
-  import MainLayout from './main';
-  Vue.use(ElementUI);
-  export default {
-    props: [ 'title', 'description', 'keywords' ],
-    components: {
-      MainLayout
-    },
-    computed:{
-      isNode() {
-        return EASY_ENV_IS_NODE;
-      }
-    }
-  }
-</script>
+<script lang="ts" src="./index.ts"></script>

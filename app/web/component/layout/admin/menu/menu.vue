@@ -25,25 +25,7 @@
       </el-menu>  
   </div>
 </template>
-<script type="ts">
-  import menu from './menu.ts';
-  export default {
-    props: ['collapse'],
-    data(){
-      return {
-        menu
-      };
-    },
-    methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      }
-    },
-  }
-</script>    
+<script lang = "ts" src="./menu.ts"></script>    
 
 <style>
 .aside {
