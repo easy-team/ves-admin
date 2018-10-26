@@ -30,27 +30,4 @@
 </template>
 <style>
 </style>
-<script type="ts">
-import "./header.css";
-import LeftMenu from "../menu/menu.vue";
-export default {
-  components: {
-    LeftMenu
-  },
-  data() {
-    return {
-      collapse: false,
-      site: {
-        name: "ves"
-      }
-    };
-  },
-  computed: {},
-  methods: {
-    logout() {
-      window.location.replace("/login");
-    }
-  },
-  mounted: function() {}
-};
-</script>
+<script lang="ts" src="./header.ts"></script>

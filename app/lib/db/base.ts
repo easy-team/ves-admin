@@ -2,7 +2,7 @@
 import Condition from '../condition';
 import * as shortid from 'shortid';
 export default class DB {
-  public instance;
+  public instance: any;
   public name: string;
   constructor(name: string = 'blog.json') {
     this.name = name;
@@ -32,7 +32,7 @@ export default class DB {
     return null;
   }
 
-  public getPager(collectionName: string, condition: Condition) {
+  public getPager(collectionName: string, condition: Condition): any {
     return null;
   }
 }

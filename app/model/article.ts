@@ -6,26 +6,26 @@ export default class Article {
   @JsonProperty('id')
   public id: string;
   @JsonProperty('title')
-  public title: string;
+  public title: string | undefined;
   @JsonProperty('summary')
-  public summary: string;
+  public summary: string | undefined;
   @JsonProperty('categoryId')
-  public categoryId: number;
+  public categoryId: number | undefined;
   @JsonProperty('tag')
-  public tag: string;
+  public tag: string | undefined;
   @JsonProperty('categoryId')
-  public authorId: number;
+  public authorId: number | undefined;
   @JsonProperty('createTime')
-  public createTime: number;
+  public createTime: number | undefined;
   @JsonProperty('hits')
   public hits: number;
   @JsonProperty('url')
-  public url: string;
+  public url: string | undefined;
   @JsonProperty('status')
-  public status: number;
+  public status: number | undefined;
 
   constructor() {
-    this.id = void 0;
+    this.id = '';
     this.title = undefined;
     this.summary = undefined;
     this.tag = undefined;

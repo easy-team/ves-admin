@@ -15,5 +15,6 @@
     "page": "${workspaceRoot}/app/web/page",
     "store": "${workspaceRoot}/app/web/store",
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "javascript.implicitProjectConfig.experimentalDecorators": true
 }

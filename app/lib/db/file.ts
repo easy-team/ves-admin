@@ -4,7 +4,7 @@ import * as FileSync from 'lowdb/adapters/FileSync';
 import BaseDB from './base';
 import Condition from '../condition';
 export default class FileDB extends BaseDB {
-  public instance;
+  public instance: any;
   constructor(name?: string) {
     super(name);
     const file = new FileSync(this.name);
@@ -54,7 +54,7 @@ export default class FileDB extends BaseDB {
     const end = pageIndex * pageSize;
     const result = this.get(collectionName)
       .filter(where)
-      .filter(item => {
+      .filter((item: any) => {
         return Object.keys(like).reduce((isLike, key) => {
           return isLike && item[key] && item[key].indexOf(like[key]) > -1;
         }, true);

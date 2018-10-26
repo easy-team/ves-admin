@@ -5,10 +5,11 @@
     "module": "esnext",
     "lib": [
       "es6",
-      "dom"
+      "dom",
+      "es2017",
+      "esnext"
     ]
   },
- 
   "exclude": [
     "node_modules",
     "**/*.spec.ts"
