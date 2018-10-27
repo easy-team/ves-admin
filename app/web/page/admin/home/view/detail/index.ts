@@ -1,16 +1,19 @@
-// export default {
-//   computed: {
-//     article() {
-//       return this.$store.state.article;
-//     }
-//   },
-//   methods: {
-//     fetchApi({ state, dispatch, commit }, params) {
-//       // params = params || state.route.params;
-//       // return dispatch(SET_ARTICLE_DETAIL, { id : params.id });
-//     },
-//   },
-//   beforeMount() {
-//     this.fetchApi(this.$store, this.$route.params);
-//   }
-// }
+import { Vue, Component } from 'vue-property-decorator';
+import Article from '../../../../../../model/article';
+import {
+  Getter,
+  Action
+} from 'vuex-class';
+
+@Component
+export default class Detail extends Vue {
+  @Getter('article') article?: Article;
+  @Action('getArticle') getArticle: any;
+  beforeMount() {
+    const { id } = this.$route.params;
+    this.getArticle({ id });
+  }
+  // fetchApi() {
+  //   this.getArticle({ id });
+  // }
+}

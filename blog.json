@@ -59,17 +59,6 @@
       "createTime": 1515671348293
     },
     {
-      "id": 6,
-      "title": "vue服务器渲染",
-      "summary": "服务器渲染可以加快首屏速度,利于SEO",
-      "hits": 565,
-      "url": "http://csbun.github.io/blog/2016/08/vue-2-0-server-side-rendering/",
-      "tag": "egg,vue,webpack",
-      "categoryId": 1,
-      "authorId": 1,
-      "createTime": 1515671348293
-    },
-    {
       "id": "7",
       "title": "webpack服务器构建",
       "summary": "Webpack is an amazing tool.",
@@ -393,17 +382,6 @@
       "createTime": 1515671348340
     },
     {
-      "id": "37",
-      "title": "webpack服务器构建",
-      "summary": "Webpack is an amazing tool.",
-      "hits": 988,
-      "url": "http://jlongster.com/Backend-Apps-with-Webpack--Part-I",
-      "tag": "egg,vue,webpack",
-      "categoryId": 1,
-      "authorId": 1,
-      "createTime": 1515671348340
-    },
-    {
       "id": "38",
       "title": "vue component loader for Webpack",
       "summary": "Webpack loader for Vue.js components",
@@ -502,18 +480,6 @@
       "categoryId": 1,
       "authorId": 1,
       "createTime": 1515671348345
-    },
-    {
-      "id": "47",
-      "title": "webpack配置官方文档",
-      "summary": "webpack is a module bundler for modern JavaScript applications.",
-      "hits": 550,
-      "url": "https://webpack.js.org/configuration/",
-      "status": 1,
-      "tag": "egg,vue,webpack",
-      "categoryId": 1,
-      "authorId": 1,
-      "createTime": 1515671348346
     }
   ]
 }

@@ -9,6 +9,7 @@ import {
 
 import RootState from '../../state';
 import AdminState from './state';
+import Article from '../../../../../model/article';
 
 axios.defaults.baseURL = 'http://127.0.0.1:7001';
 axios.defaults.timeout = 15000;
@@ -19,51 +20,45 @@ export default class AdminModule implements Module<AdminState, RootState> {
   state: AdminState = {
     articleTotal: 0,
     articleList: [],
-    article: {},
+    article: null,
   };
   getters: GetterTree<AdminState, RootState> = {
     total(state): number {
       return state.articleTotal;
     },
-    article(state): any {
+    article(state): Article | null {
       return state.article;
     },
-    articleList(state): any {
+    articleList(state): Article[] {
       return state.articleList;
     },
   };
   actions: ActionTree<AdminState, RootState> = {
-    getArticleList({ commit, dispatch, state, rootState }, condition) {
+    async getArticleList({ commit, dispatch, state, rootState }, condition) {
       const headers = EASY_ENV_IS_NODE ? {
         'x-csrf-token': rootState.csrf,
         'Cookie': `csrfToken=${rootState.csrf}`
       } : {};
-      return axios.post(`${rootState.origin}/admin/api/article/list`, condition, { headers }).then(response => {
-        commit(SET_ARTICLE_LIST, response.data);
-      });
+      const res = await axios.post(`${rootState.origin}/admin/api/article/list`, condition, { headers });
+      commit(SET_ARTICLE_LIST, res.data);
     },
-    getArticle({ commit, dispatch, state , rootState}, { id }) {
-      return axios.get(`${rootState.origin}/admin/api/article/${id}`)
-      .then(response => {
-        commit(SET_ARTICLE_DETAIL, response.data);
-      });
+    async getArticle({ commit, dispatch, state , rootState}, { id }) {
+      const res = await axios.get(`${rootState.origin}/admin/api/article/${id}`);
+      commit(SET_ARTICLE_DETAIL, res.data);
     },
-    saveArticle({ commit, dispatch, state, rootState }, data) {
+    async saveArticle({ commit, dispatch, state, rootState }, data) {
       // node need auth
-      return axios.post(`${rootState.origin}/admin/api/article/add`, data, {
+      const res = await axios.post(`${rootState.origin}/admin/api/article/add`, data, {
         headers: {
           'x-csrf-token': this.csrf,
         }
-      }).then(response => {
-        commit(SET_ARTICLE_LIST, data);
       });
+      commit(SET_ARTICLE_LIST, res.data);
     },
-    deleteArticle({ commit, dispatch, state, rootState }, { id }) {
+    async deleteArticle({ commit, dispatch, state, rootState }, { id }) {
       // node need auth
-      return axios.post(`${rootState.origin}/admin/api/article/del`, { id })
-      .then(response => {
-        commit(DELETE_ARTICLE, { id });
-      });
+      await axios.post(`${rootState.origin}/admin/api/article/del`, { id });
+      commit(DELETE_ARTICLE, { id });
     }
   };
   mutations: MutationTree<AdminState> = {

@@ -1,5 +1,7 @@
+import Article from '../../../../../model/article';
+
 export default interface AdminState {
   articleTotal: number;
-  articleList: any;
-  article: any;
+  articleList: Article[];
+  article: Article | null;
 }
