@@ -49,9 +49,10 @@ export default class App {
           }
           return Promise.all(
             matchedComponents.map((component: any) => {
-              if (component.preFetch) {
-                return component.preFetch(store);
-              }
+              // const methods = component.options && component.options.methods || {};
+              // if (methods && methods.fetchApi) {
+              //   methods.fetchApi.apply(component);
+              // }
               return null;
             })
           ).then(() => {

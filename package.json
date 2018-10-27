@@ -16,7 +16,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
-    "@hubcarl/json-typescript-mapper": "^1.1.4",
+    "@hubcarl/json-typescript-mapper": "2.0.0",
     "element-ui": "^2.0.8",
     "extend": "~3.0.0",
     "font-awesome": "^4.7.0",

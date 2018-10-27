@@ -3,6 +3,7 @@
   "compilerOptions": {
     "target": "es5",      
     "module": "esnext",
+    "sourceMap": true,
     "lib": [
       "es6",
       "dom",
@@ -10,6 +11,9 @@
       "esnext"
     ]
   },
+  "include": [
+    "./**/*.ts",
+  ],
   "exclude": [
     "node_modules",
     "**/*.spec.ts"

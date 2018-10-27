@@ -3,7 +3,7 @@ module.exports = {
   entry: {
     'admin/home': 'app/web/page/admin/home/index.ts'
   },
-  lib: ['vue', 'vuex', 'vue-router', 'vuex-router-sync', 'axios'],
+  dll: ['vue', 'vuex', 'vue-router', 'vuex-router-sync', 'axios'],
   loaders: {
     typescript: true
   },

@@ -7,4 +7,4 @@
 <style>
 
 </style>
-<script type="ts" src="./index.ts"></script>
+<script lang="ts" src="./index.ts"></script>
