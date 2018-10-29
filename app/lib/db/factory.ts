@@ -1,7 +1,7 @@
 'use strict';
 import FileDB from './file';
 import MongoDB from './mongo';
-import MySQLDB from './msyql';
+import MySQLDB from './mysql';
 export default function(type?: string) {
   switch (type) {
     case 'mysql':

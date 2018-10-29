@@ -17,11 +17,8 @@ axios.defaults.xsrfHeaderName = 'x-csrf-token';
 axios.defaults.xsrfCookieName = 'csrfToken';
 
 export default class AdminModule implements Module<AdminState, RootState> {
-  state: AdminState = {
-    articleTotal: 0,
-    articleList: [],
-    article: null,
-  };
+  state: AdminState;
+
   getters: GetterTree<AdminState, RootState> = {
     total(state): number {
       return state.articleTotal;
@@ -33,6 +30,7 @@ export default class AdminModule implements Module<AdminState, RootState> {
       return state.articleList;
     },
   };
+
   actions: ActionTree<AdminState, RootState> = {
     async getArticleList({ commit, dispatch, state, rootState }, condition) {
       const headers = EASY_ENV_IS_NODE ? {
@@ -44,7 +42,6 @@ export default class AdminModule implements Module<AdminState, RootState> {
     },
     async getArticle({ commit, dispatch, state , rootState}, { id }) {
       const res = await axios.get(`${rootState.origin}/admin/api/article/${id}`);
-      console.log('>>>res', res);
       commit(SET_ARTICLE_DETAIL, res.data);
     },
     async saveArticle({ commit, dispatch, state, rootState }, data) {
@@ -62,6 +59,7 @@ export default class AdminModule implements Module<AdminState, RootState> {
       commit(DELETE_ARTICLE, { id });
     }
   };
+
   mutations: MutationTree<AdminState> = {
     [SET_ARTICLE_LIST](state, { list, total }) {
       state.articleTotal = total;
@@ -81,4 +79,13 @@ export default class AdminModule implements Module<AdminState, RootState> {
       });
     }
   };
+
+  constructor(initState: AdminState) {
+    this.state = {
+      articleTotal: 0,
+      articleList: [],
+      article: null,
+      ...initState
+    };
+  }
 }

@@ -1,9 +1,9 @@
-import Vue, { VueConstructor } from 'vue';
+import Vue from 'vue';
 import { sync } from 'vuex-router-sync';
 
 export default class App {
   config: any;
-  constructor(config: any) {
+  constructor(config) {
     this.config = config;
   }
 
@@ -14,7 +14,7 @@ export default class App {
     return this.client();
   }
 
-  create(initState?: any) {
+  create(initState) {
     const { entry, createStore, createRouter } = this.config;
     const store = createStore(initState);
     const router = createRouter();
@@ -22,45 +22,49 @@ export default class App {
     return {
       router,
       store,
-      render: (h: any) => {
+      render: h => { // not use ...entry, why ?
         return h(entry);
       },
     };
   }
 
+  fetch(vm): Promise<any> {
+    const { store, router } = vm;
+    const matchedComponents = router.getMatchedComponents();
+    if (!matchedComponents) {
+      return Promise.reject('No Match Component');
+    }
+    return Promise.all(
+      matchedComponents.map((component: any) => {
+        const options = component.options;
+        if (options && options.methods && options.methods.fetchApi) {
+          return options.methods.fetchApi.call(component, { store, router, route: router.currentRoute });
+        }
+        return null;
+      })
+    );
+  }
+
   client() {
     Vue.prototype.$http = require('axios');
-    const options = this.create(window.__INITIAL_STATE__);
-    const app = new Vue(options);
+    const vm = this.create(window.__INITIAL_STATE__);
+    vm.router.afterEach(() => {
+      this.fetch(vm);
+    });
+    const app = new Vue(vm);
     app.$mount('#app');
     return app;
   }
 
   server() {
-    return (context: any) => {
-      const vm = this.create();
+    return context => {
+      const vm = this.create(context.state);
       const { store, router } = vm;
       router.push(context.state.url);
       return new Promise((resolve, reject) => {
         router.onReady(() => {
-          const matchedComponents = router.getMatchedComponents();
-          if (!matchedComponents) {
-            return reject({ code: '404' });
-          }
-          return Promise.all(
-            matchedComponents.map((component: any) => {
-              const options = component.options;
-              if (options && options.methods && options.methods.fetchApi) {
-                return options.methods.fetchApi.call(component, { store, router, route: router.currentRoute });
-              }
-              return null;
-            })
-          ).then(() => {
-            console.log('>>>>state', store.state);
-            context.state = {
-              ...store.state,
-              ...context.state
-            };
+          this.fetch(vm).then(() => {
+            context.state = store.state;
             return resolve(new Vue(vm));
           });
         });

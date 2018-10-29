@@ -1,6 +1,8 @@
 'use strict';
 import Condition from '../condition';
 import * as shortid from 'shortid';
+import { PlainObject } from 'ves';
+
 export default class DB {
   public instance: any;
   public name: string;
@@ -16,15 +18,15 @@ export default class DB {
     return null;
   }
 
-  public query(collectionName: string, json: object) {
+  public query(collectionName: string, json: PlainObject) {
     return null;
   }
 
-  public add(collectionName: string, json: object) {
+  public add(collectionName: string, json: PlainObject) {
     return null;
   }
 
-  public update(collectionName: string, where: object, json: object) {
+  public update(collectionName: string, where: PlainObject, json: PlainObject) {
     return null;
   }
 

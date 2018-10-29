@@ -1,3 +1,4 @@
+import { PlainObject } from 'ves';
 import DB from './base';
 import Condition from '../condition';
 export default class Collection {
@@ -16,15 +17,15 @@ export default class Collection {
     return this.db.query(this.name, json);
   }
 
-  public add(json: object) {
+  public add(json: PlainObject) {
     return this.db.add(this.name, json);
   }
 
-  public update(where: object, json: object) {
+  public update(where: PlainObject, json: PlainObject) {
     return this.db.update(this.name, where, json);
   }
 
-  public delete(field: object) {
+  public delete(field: PlainObject) {
     return this.db.delete(this.name, field);
   }
 

@@ -1,4 +1,4 @@
 export default class ArticleDetail {
-  public id: number | undefined;
-  public content: string | undefined;
+  public id?: number;
+  public content?: string;
 }

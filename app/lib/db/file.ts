@@ -1,6 +1,7 @@
 import * as lowdb from 'lowdb';
 import * as lodashid from 'lodash-id';
 import * as FileSync from 'lowdb/adapters/FileSync';
+import { PlainObject } from 'ves';
 import BaseDB from './base';
 import Condition from '../condition';
 export default class FileDB extends BaseDB {
@@ -21,23 +22,23 @@ export default class FileDB extends BaseDB {
     return this.instance.get(collectionName);
   }
 
-  public query(collectionName: string, json: object) {
+  public query(collectionName: string, json: PlainObject) {
     return this.get(collectionName)
       .find(json)
       .write();
   }
 
-  public add(collectionName: string, json: object) {
+  public add(collectionName: string, json: PlainObject) {
     return this.get(collectionName)
       .push(json)
       .write();
   }
 
-  public update(collectionName: string, where: object, json: object) {
+  public update(collectionName: string, where: PlainObject, json: PlainObject) {
     return this.get(collectionName).find(where).assign(json).write();
   }
 
-  public delete(collectionName: string, json: object) {
+  public delete(collectionName: string, json: PlainObject) {
     return this.get(collectionName).remove(json).write();
   }
 
@@ -54,7 +55,7 @@ export default class FileDB extends BaseDB {
     const end = pageIndex * pageSize;
     const result = this.get(collectionName)
       .filter(where)
-      .filter((item: any) => {
+      .filter(item => {
         return Object.keys(like).reduce((isLike, key) => {
           return isLike && item[key] && item[key].indexOf(like[key]) > -1;
         }, true);
