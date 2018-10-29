@@ -13,9 +13,9 @@ Vue.use(ElementUI);
   }
 })
 export default class Layout extends Vue {
-  @Prop(String) title?: string;
-  @Prop(String) description?: string;
-  @Prop(String) keywords?: string;
+  @Prop({ type: String, default: 'Ves' }) title?: string;
+  @Prop({ type: String, default: 'Vue TypeScript Framework, Server Side Render' }) description?: string;
+  @Prop({ type: String, default: 'Vue,TypeScript,Isomorphic' }) keywords?: string;
 
   isNode: boolean = EASY_ENV_IS_NODE;
 
