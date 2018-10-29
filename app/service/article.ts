@@ -13,7 +13,7 @@ export default class ArticeService extends Service {
     this.colllection = new Colllection(ctx.db, 'article');
   }
 
-  public getArtilceList(condition: Condition) {
+  public async getArtilceList(condition: Condition) {
     if (condition.categoryId) {
       condition.where.categoryId = condition.categoryId;
     }
@@ -26,7 +26,7 @@ export default class ArticeService extends Service {
     return this.colllection.getPager(condition);
   }
 
-  public saveArticle(data: object) {
+  public async saveArticle(data: object) {
     const article: Article = deserialize(Article, data);
     if (article.id) {
       return this.colllection.update({ id: article.id }, article);
@@ -36,11 +36,11 @@ export default class ArticeService extends Service {
     return article;
   }
 
-  public query(json: object) {
+  public async query(json: object) {
     return this.colllection.query(json);
   }
 
-  public deleteArticle(id: string) {
+  public async deleteArticle(id: string) {
     return this.colllection.delete({ id });
   }
 }

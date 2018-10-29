@@ -11,7 +11,6 @@ import {
 export default class List extends Vue {
   @Getter('articleList') articleList: any;
   @Getter('total') total?: number;
-  @Action('getArticleList') getArticleList: any;
   @Action('deleteArticle') deleteArticle: any;
 
   loading: boolean = false;
@@ -38,8 +37,9 @@ export default class List extends Vue {
     { categoryId: 3, name: 'Egg' }
   ];
 
-  fetchApi(store: any, json: any) {
-    return this.getArticleList(this.q);
+  fetchApi(options: any, q: any) {
+    const { store } = options;
+    return store.dispatch('getArticleList', q);
   }
 
   query() {
@@ -91,11 +91,5 @@ export default class List extends Vue {
       this.$message.success('DELETE');
       this.loading = false;
     });
-  }
-
-  beforeMount() {
-    if (!(this.articleList && this.articleList.length > 0)) {
-      this.fetchApi(this.$store, this.q);
-    }
   }
 }

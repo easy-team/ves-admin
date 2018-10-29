@@ -2,13 +2,13 @@
 import { JsonProperty } from '@hubcarl/json-typescript-mapper';
 export default class Condition {
   @JsonProperty('title')
-  public title: string | undefined;
+  public title?: string;
   @JsonProperty('categoryId')
-  public categoryId: number | undefined;
+  public categoryId?: number;
   @JsonProperty('status')
-  public status: number | undefined;
+  public status?: number;
   @JsonProperty('tag')
-  public tag: string | undefined;
+  public tag?: string;
   @JsonProperty('pageIndex')
   public pageIndex: number;
   @JsonProperty('pageSize')
