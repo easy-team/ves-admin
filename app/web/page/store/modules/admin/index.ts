@@ -44,6 +44,7 @@ export default class AdminModule implements Module<AdminState, RootState> {
     },
     async getArticle({ commit, dispatch, state , rootState}, { id }) {
       const res = await axios.get(`${rootState.origin}/admin/api/article/${id}`);
+      console.log('>>>res', res);
       commit(SET_ARTICLE_DETAIL, res.data);
     },
     async saveArticle({ commit, dispatch, state, rootState }, data) {

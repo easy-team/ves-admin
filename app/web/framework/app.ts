@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, { VueConstructor } from 'vue';
 import { sync } from 'vuex-router-sync';
 
 export default class App {
@@ -38,8 +38,8 @@ export default class App {
 
   server() {
     return (context: any) => {
-      const options = this.create();
-      const { store, router } = options;
+      const vm = this.create();
+      const { store, router } = vm;
       router.push(context.state.url);
       return new Promise((resolve, reject) => {
         router.onReady(() => {
@@ -49,18 +49,19 @@ export default class App {
           }
           return Promise.all(
             matchedComponents.map((component: any) => {
-              // const methods = component.options && component.options.methods || {};
-              // if (methods && methods.fetchApi) {
-              //   methods.fetchApi.apply(component);
-              // }
+              const options = component.options;
+              if (options && options.methods && options.methods.fetchApi) {
+                return options.methods.fetchApi.call(component, { store, router, route: router.currentRoute });
+              }
               return null;
             })
           ).then(() => {
+            console.log('>>>>state', store.state);
             context.state = {
               ...store.state,
               ...context.state
             };
-            return resolve(new Vue(options));
+            return resolve(new Vue(vm));
           });
         });
       });

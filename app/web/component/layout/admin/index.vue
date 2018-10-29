@@ -1,7 +1,7 @@
 <template>
   <html v-if="isNode">
     <head>
-      <title>{{title || 'ves'}}</title>
+      <title>{{title}}</title>
       <meta name="keywords" :content="keywords">
       <meta name="description" :content="description">
       <meta http-equiv="content-type" content="text/html;charset=utf-8">

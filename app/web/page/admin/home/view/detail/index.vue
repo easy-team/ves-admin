@@ -1,5 +1,5 @@
 <template>
-  <div style="font-size: 24px; text-align: center">
+  <div style="font-size: 24px; text-align: center" v-if="article">
     <h1>{{article.title}}</h1>
     <iframe :src="article.url" frameborder="0" width="100%" height="600"></iframe>
   </div>

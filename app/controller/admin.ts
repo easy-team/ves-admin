@@ -7,6 +7,7 @@ export default class AdminController extends Controller {
 
   public async login(ctx: Context) {
     await ctx.renderClient('admin/login.js', {});
+
   }
 
   public async home(ctx: Context) {
