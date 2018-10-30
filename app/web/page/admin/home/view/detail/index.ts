@@ -14,4 +14,7 @@ export default class Detail extends Vue {
     const { id } = route.params;
     return store.dispatch('getArticle', { id });
   }
+  destroyed() {
+    this.$store.state.admin.article = null;
+   }
 }

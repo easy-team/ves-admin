@@ -23,8 +23,8 @@ export default class AdminModule implements Module<AdminState, RootState> {
     total(state): number {
       return state.articleTotal;
     },
-    article(state): Article | null {
-      return state.article;
+    article(state): Article {
+      return state.article || {};
     },
     articleList(state): Article[] {
       return state.articleList;
@@ -33,6 +33,7 @@ export default class AdminModule implements Module<AdminState, RootState> {
 
   actions: ActionTree<AdminState, RootState> = {
     async getArticleList({ commit, dispatch, state, rootState }, condition) {
+      // fetch no token headers
       const headers = EASY_ENV_IS_NODE ? {
         'x-csrf-token': rootState.csrf,
         'Cookie': `csrfToken=${rootState.csrf}`
@@ -46,12 +47,9 @@ export default class AdminModule implements Module<AdminState, RootState> {
     },
     async saveArticle({ commit, dispatch, state, rootState }, data) {
       // node need auth
-      const res = await axios.post(`${rootState.origin}/admin/api/article/add`, data, {
-        headers: {
-          'x-csrf-token': this.csrf,
-        }
-      });
+      const res = await axios.post(`${rootState.origin}/admin/api/article/add`, data);
       commit(SET_ARTICLE_LIST, res.data);
+      return res;
     },
     async deleteArticle({ commit, dispatch, state, rootState }, { id }) {
       // node need auth
@@ -84,7 +82,7 @@ export default class AdminModule implements Module<AdminState, RootState> {
     this.state = {
       articleTotal: 0,
       articleList: [],
-      article: null,
+      article: undefined,
       ...initState
     };
   }

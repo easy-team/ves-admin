@@ -11,7 +11,7 @@
       </el-row>
     </div>
     <div class="editor-container" v-if="isShowEditor">
-      <markdown-editor id="contentEditor" ref="contentEditor" v-model="article.content" :height="500" :zIndex="20"></markdown-editor>
+      <markdown-editor id="contentEditor" ref="contentEditor" v-model="text" :height="500" :zIndex="20"></markdown-editor>
     </div>
   </div>
 </template>
@@ -20,38 +20,4 @@
   width: 100%;
 }
 </style>
-<script type="babel">
-export default {
-  components: {
-    MarkdownEditor: () => import("component/MarkdownEditor/index.vue")
-  },
-  data() {
-    return {
-      article: {
-        content: "Markdown Write",
-        html: "",
-        title: "",
-        tag: ""
-      },
-      isShowEditor: false
-    };
-  },
-  computed: {},
-  methods: {
-     markdown2Html() {
-      import('showdown').then(showdown => {
-        const converter = new showdown.Converter()
-        this.article.html = converter.makeHtml(this.content)
-      })
-    },
-    submit(status) {
-      //  this.article.status = status;
-      //  this.$store.dispatch(SET_SAVE_ARTICLE, this.article);
-      //  this.$message(`添加成功`);
-    }
-  },
-  mounted() {
-    this.isShowEditor = true;
-  }
-};
-</script>
+<script lang="ts" src="./index.ts"></script>

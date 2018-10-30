@@ -24,6 +24,10 @@ export default function createRouter() {
         component: () => import('../view/write/index.vue')
       },
       {
+        path: '/article/edit/:id',
+        component: () => import('../view/write/index.vue')
+      },
+      {
         path: '/article/detail/:id',
         component: () => import('../view/detail/index.vue')
       },

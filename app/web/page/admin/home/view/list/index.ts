@@ -1,10 +1,7 @@
 import { Vue, Component, Emit } from 'vue-property-decorator';
 import {
-  State,
   Getter,
-  Action,
-  Mutation,
-  namespace
+  Action
 } from 'vuex-class';
 
 @Component
@@ -47,7 +44,11 @@ export default class List extends Vue {
   }
 
   write() {
-    this.$router.push('/article/add');
+    this.$router.push(`/article/add`);
+  }
+
+  edit(id) {
+    this.$router.push(`/article/edit/${id}`);
   }
 
   handleSelectionChange(val: number) {
@@ -67,7 +68,8 @@ export default class List extends Vue {
   }
 
   handleEdit(index: number, row: any) {
-    this.$message(`你点击了编辑操作 index:${index}, id:${row.id}`);
+    console.log(row);
+    this.edit(row.id);
   }
 
   handleDelete(index: number, row: any) {
