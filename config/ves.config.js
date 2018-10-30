@@ -3,17 +3,5 @@ module.exports = {
   entry: {
     'admin/home': 'app/web/page/admin/home/index.ts'
   },
-  dll: ['vue', 'vuex', 'vue-router', 'vuex-router-sync', 'axios'],
-  loaders: {
-    typescript: true
-  },
-  plugins: {
-    copy: [{
-      from: 'app/web/asset/css/bootstrap.min.css',
-      to: 'asset/css/bootstrap.min.css'
-    }]
-  },
-  node: {
-    console: true
-  }
+  dll: ['vue', 'vuex', 'vue-router', 'vuex-router-sync', 'axios']
 };

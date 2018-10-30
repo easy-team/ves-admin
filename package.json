@@ -38,7 +38,7 @@
     "@types/lowdb": "^1.0.6",
     "@types/shortid": "^0.0.29",
     "cz-conventional-changelog": "^2.1.0",
-    "ves-cli": "^0.1.0"
+    "ves-cli": "^0.1.2"
   },
   "egg": {
     "framework": "ves",
