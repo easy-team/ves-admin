@@ -6,8 +6,8 @@ import {
 
 @Component
 export default class List extends Vue {
-  @Getter('articleList') articleList: any;
   @Getter('total') total?: number;
+  @Getter('articleList') articleList: any;
   @Action('deleteArticle') deleteArticle: any;
 
   loading: boolean = false;
@@ -34,13 +34,17 @@ export default class List extends Vue {
     { categoryId: 3, name: 'Egg' }
   ];
 
-  fetchApi(options: any, q: any) {
+  fetchApi(options, q) {
     const { store } = options;
     return store.dispatch('getArticleList', q);
   }
 
   query() {
-    this.fetchApi(this.$store, this.q);
+    this.fetchApi({ store: this.$store }, this.q);
+  }
+
+  refresh() {
+    this.fetchApi({ store: this.$store }, this.q);
   }
 
   write() {
@@ -58,13 +62,13 @@ export default class List extends Vue {
   handleSizeChange(val: number) {
     console.log(`每页 ${val} 条`);
     this.q.pageSize = val;
-    this.fetchApi(this.$store, this.q);
+    this.refresh();
   }
 
   handleCurrentChange(val: number) {
     console.log(`当前页: ${val}`);
     this.q.pageIndex = val;
-    this.fetchApi(this.$store, this.q);
+    this.refresh();
   }
 
   handleEdit(index: number, row: any) {
