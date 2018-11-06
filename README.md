@@ -22,7 +22,7 @@ $ open http://localhost:7001
 
 - Font-End TypeScript
 
-![Font-End TypeScript](https://github.com/easy-team/ves-admin/blob/master/docs/images/ves-front-end?raw=true)
+![Font-End TypeScript](https://github.com/easy-team/ves-admin/blob/master/docs/images/ves-front-end.png?raw=true)
 
 - Node TypeScript
 
