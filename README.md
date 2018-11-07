@@ -2,6 +2,10 @@
 
 Single Page Application Isomorphic Example for Ves Framework, Front-End and Node of The Application are Written in TypeScript.
 
+## Document
+
+- https://www.yuque.com/easy-team/ves
+
 ## QuickStart
 
 ```bash
@@ -36,10 +40,6 @@ $ open http://localhost:7001
 
 - https://github.com/kaorun343/vue-property-decorator
 - https://github.com/ktsn/vuex-class
-
-## Document
-
-- https://www.yuque.com/easy-team/ves
 
 
 ## License
