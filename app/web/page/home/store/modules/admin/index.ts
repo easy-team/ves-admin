@@ -9,7 +9,7 @@ import {
 
 import RootState from '../../state';
 import AdminState from './state';
-import Article from '../../../../../model/article';
+import Article from '../../../../../../model/article';
 
 axios.defaults.baseURL = 'http://127.0.0.1:7001';
 axios.defaults.timeout = 15000;

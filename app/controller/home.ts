@@ -6,12 +6,12 @@ import Condition from '../lib/condition';
 export default class AdminController extends Controller {
 
   public async login(ctx: Context) {
-    await ctx.renderClient('admin/login.js', {});
+    await ctx.render('login.js', {});
 
   }
 
-  public async home(ctx: Context) {
-    await ctx.render('admin/home.js', { url: ctx.url.replace(/\/admin/, '') });
+  public async index(ctx: Context) {
+    await ctx.render('home.js', { url: ctx.url.replace(/\/admin/, '') });
   }
 
   public async list(ctx: Context) {

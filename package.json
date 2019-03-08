@@ -1,6 +1,6 @@
 {
-  "name": "ves-admin",
-  "version": "0.3.0",
+  "name": "ves-blog",
+  "version": "1.0.0",
   "description": "ves framework example",
   "scripts": {
     "dev": "ves dev",

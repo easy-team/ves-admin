@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { Getter, Action } from 'vuex-class';
 import { Component, Prop, Watch } from 'vue-property-decorator';
-import Article from '../../../../../../model/article';
+import Article from '../../../../../model/article';
 
 @Component({
   components: {

@@ -1,8 +1,8 @@
 <template>
-<div class="login">
+<Layout class="login">
     <div class="login-form">
       <div class="login-header">
-        <img src="../../../asset/images/logo.png" height="100" alt="">
+        <img src="../../asset/images/logo.png" height="100" alt="">
         <p>IBlog</p>
       </div>
       <div class="login-info">
@@ -33,7 +33,7 @@
         <a href="javascript:;" style="float: right;color: #3C8DBC;font-size: 14px">注册</a>
       </div>
     </div>
-</div>
+</Layout>
 </template>
 
 <style>
@@ -47,10 +47,17 @@ import {
   Button,
   Checkbox
 } from 'element-ui';
+
+import 'element-ui/lib/theme-chalk/index.css';
+import Layout from '../../component/layout/blog/index.vue';
+
 Vue.component(Input.name, Input);
 Vue.component(Button.name, Button);
 Vue.component(Checkbox.name, Checkbox);
 export default {
+  components:{
+    Layout
+  },
   data:{
     userName: "",
     password: "",
