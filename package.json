@@ -19,7 +19,6 @@
   "dependencies": {
     "@hubcarl/json-typescript-mapper": "2.0.0",
     "element-ui": "^2.0.8",
-    "extend": "~3.0.0",
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.4",
     "lodash-id": "^0.14.0",
@@ -29,7 +28,7 @@
     "shortid": "^2.2.8",
     "showdown": "^1.8.6",
     "simplemde": "^1.11.2",
-    "ves": "^0.3.0",
+    "ves": "^1.0.0",
     "vue-material-input": "^1.2.0",
     "vue-property-decorator": "^7.2.0",
     "vuex-class": "^0.3.1"
@@ -39,7 +38,7 @@
     "@types/lowdb": "^1.0.6",
     "@types/shortid": "^0.0.29",
     "cz-conventional-changelog": "^2.1.0",
-    "ves-cli": "^0.3.0"
+    "ves-cli": "^1.0.0"
   },
   "egg": {
     "framework": "ves",
