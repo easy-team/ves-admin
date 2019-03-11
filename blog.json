@@ -459,17 +459,6 @@
       "createTime": 1515671348344
     },
     {
-      "id": "45",
-      "title": "vue从1升级到2",
-      "summary": "Migrating from v1 to v2",
-      "hits": 555,
-      "url": "https://webpack.js.org/guides/migrating/",
-      "tag": "egg,vue,webpack",
-      "categoryId": 1,
-      "authorId": 1,
-      "createTime": 1515671348345
-    },
-    {
       "id": "46",
       "title": "vue-渐进式JavaScript 框架",
       "summary": "简单小巧的核心，渐进式技术栈，足以应付任何规模的应用",

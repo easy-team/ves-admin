@@ -3,7 +3,7 @@
     <div class="login-form">
       <div class="login-header">
         <img src="../../asset/images/logo.png" height="100" alt="">
-        <p>IBlog</p>
+        <p>ves-blog</p>
       </div>
       <div class="login-info">
         <el-input
@@ -58,10 +58,12 @@ export default {
   components:{
     Layout
   },
-  data:{
-    userName: "",
-    password: "",
-    remenber: true
+  data() {
+    return {
+      userName: "",
+      password: "",
+      remenber: true
+    }
   },
   methods: {
     login() {
