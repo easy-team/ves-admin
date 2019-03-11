@@ -1,4 +1,4 @@
-# ves-amdin
+# ves-blog
 
 Single Page Application Isomorphic Example for Ves Framework, Front-End and Node of The Application are Written in TypeScript.
 
