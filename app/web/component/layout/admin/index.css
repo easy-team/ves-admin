@@ -1,3 +1,6 @@
+html, body{
+  margin: 0px 0px;
+}
 .admin .search {
   margin-top: 8px;
   margin-bottom: 16px;
