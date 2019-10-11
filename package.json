@@ -17,7 +17,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
-    "@hubcarl/json-typescript-mapper": "2.0.0",
+    "@hubcarl/json-typescript-mapper": "^2.0.0",
     "element-ui": "^2.0.8",
     "extend": "~3.0.0",
     "font-awesome": "^4.7.0",
@@ -29,17 +29,15 @@
     "shortid": "^2.2.8",
     "showdown": "^1.8.6",
     "simplemde": "^1.11.2",
-    "ves": "beta",
-    "vue-material-input": "^1.2.0",
-    "vue-property-decorator": "^7.2.0",
-    "vuex-class": "^0.3.1"
+    "ves": "^2.0.0",
+    "vue-material-input": "^1.2.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.117",
     "@types/lowdb": "^1.0.6",
     "@types/shortid": "^0.0.29",
     "cz-conventional-changelog": "^2.1.0",
-    "ves-cli": "beta"
+    "ves-cli": "^2.0.0"
   },
   "egg": {
     "framework": "ves",

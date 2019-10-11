@@ -13,6 +13,7 @@ artifacts.json
 *tmp
 _site
 logs
+*.js.map
 app/**/*.js
 config/plugin.local.js
 config/plugin.js
