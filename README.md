@@ -1,9 +1,10 @@
 # ves-amdin
 
-Single Page Application Isomorphic Example for Ves Framework, Front-End and Node of The Application are Written in TypeScript.
+Vue Single Page Application Server Side Render Example for Ves Framework, Front-End and Node of The Application are Written in TypeScript.
 
 ## Document
 
+- https://easyjs.cn/ves
 - https://www.yuque.com/easy-team/ves
 
 ## QuickStart
