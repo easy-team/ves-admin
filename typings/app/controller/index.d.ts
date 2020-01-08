@@ -1,13 +1,11 @@
-// This file is created by egg-ts-helper@1.24.1
+// This file is created by egg-ts-helper@1.25.6
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-import ExportAdmin = require('../../../app/controller/admin');
 import ExportHome from '../../../app/controller/home';
 
 declare module 'egg' {
   interface IController {
-    admin: ExportAdmin;
     home: ExportHome;
   }
 }

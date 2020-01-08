@@ -1,5 +1,5 @@
 <template>
-<Layout class="login">
+<Layout class="login" :title="title" :keywords="keywords" :description="description">
     <div class="login-form">
       <div class="login-header">
         <img src="../../asset/images/logo.png" height="100" alt="">
@@ -37,7 +37,6 @@
 </template>
 
 <style>
-@import "login.css";
 </style>
 
 <script type="text/babel">
@@ -49,6 +48,8 @@ import {
 } from 'element-ui';
 
 import 'element-ui/lib/theme-chalk/index.css';
+import "./login.css";
+
 import Layout from '../../component/layout/blog/index.vue';
 
 Vue.component(Input.name, Input);
