@@ -4,7 +4,6 @@
 ### Bug Fixes
 
 * remote default config ([2d8d6bc](https://github.com/easy-team/ves-admin/commit/2d8d6bc))
-* tsc compile ([fe2b38d](https://github.com/easy-team/ves-admin/commit/fe2b38d))
 * ves tsc compile error ([1572c33](https://github.com/easy-team/ves-admin/commit/1572c33))
 
 

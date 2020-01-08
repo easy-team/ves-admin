@@ -18,5 +18,9 @@ export default (app: EggAppConfig) => {
     dir: path.join(app.baseDir, 'logs'),
   };
 
+  exports.vuessr = {
+    injectCss: false
+  };
+
   return exports;
 };

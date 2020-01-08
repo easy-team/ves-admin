@@ -13,13 +13,13 @@
     "test": "ves test",
     "lint": "tslint --project .",
     "fix": "tslint --project . --fix",
+    "yarn": "yarn install --registry https://registry.npm.taobao.org",
     "ii": "npm install --registry https://registry.npm.taobao.org",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
     "@hubcarl/json-typescript-mapper": "^2.0.0",
     "element-ui": "^2.0.8",
-    "extend": "~3.0.0",
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.4",
     "lodash-id": "^0.14.0",

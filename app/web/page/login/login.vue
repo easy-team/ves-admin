@@ -1,9 +1,9 @@
 <template>
-<div class="login">
+<Layout class="login" :title="title" :keywords="keywords" :description="description">
     <div class="login-form">
       <div class="login-header">
-        <img src="../../../asset/images/logo.png" height="100" alt="">
-        <p>IBlog</p>
+        <img src="../../asset/images/logo.png" height="100" alt="">
+        <p>ves-blog</p>
       </div>
       <div class="login-info">
         <el-input
@@ -33,11 +33,10 @@
         <a href="javascript:;" style="float: right;color: #3C8DBC;font-size: 14px">注册</a>
       </div>
     </div>
-</div>
+</Layout>
 </template>
 
 <style>
-@import "login.css";
 </style>
 
 <script type="text/babel">
@@ -47,14 +46,25 @@ import {
   Button,
   Checkbox
 } from 'element-ui';
+
+import 'element-ui/lib/theme-chalk/index.css';
+import "./login.css";
+
+import Layout from '../../component/layout/blog/index.vue';
+
 Vue.component(Input.name, Input);
 Vue.component(Button.name, Button);
 Vue.component(Checkbox.name, Checkbox);
 export default {
-  data:{
-    userName: "",
-    password: "",
-    remenber: true
+  components:{
+    Layout
+  },
+  data() {
+    return {
+      userName: "",
+      password: "",
+      remenber: true
+    }
   },
   methods: {
     login() {

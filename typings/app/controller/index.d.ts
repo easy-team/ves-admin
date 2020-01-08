@@ -3,9 +3,11 @@
 
 import 'egg';
 import ExportAdmin from '../../../app/controller/admin';
+import ExportIndex from '../../../app/controller/index';
 
 declare module 'egg' {
   interface IController {
     admin: ExportAdmin;
+    index: ExportIndex;
   }
 }
